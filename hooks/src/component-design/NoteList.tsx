@@ -3,10 +3,12 @@ import type { NoteInterface } from './NotePage';
 
 interface NoteListProps {
   notes: NoteInterface[];
-  onDelete: (id: number) => void;
+  onDelete: (id: string) => void;
 }
 
 export function NoteList({ notes, onDelete }: NoteListProps) {
+  if (notes.length === 0) return <p>No hay notas</p>;
+
   return (
     <ul>
       {notes.map((note) => (
