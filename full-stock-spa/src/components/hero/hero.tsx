@@ -1,19 +1,21 @@
+import Button from '../../ui/button';
+import Container from '../../ui/container';
 import styles from './styles.module.css';
 
 export default function Hero() {
   return (
     <section className={styles.hero}>
-      <div className={`container ${styles['hero__container']}`}>
+      <Container className={styles['hero__container']}>
         <h2 className={styles['hero__title']}>Nuevos productos disponibles</h2>
         <p className={styles['hero__text']}>
           Un pequeño lote de increíbles productos acaba de llegar.
           <br />
           Agrega tus favoritos al carrito antes que se agoten.
         </p>
-        <a href='/category' className='button button--xl'>
+        <Button href='/categories/polos' size='xl'>
           Compra ahora
-        </a>
-      </div>
+        </Button>
+      </Container>
     </section>
   );
 }

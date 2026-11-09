@@ -1,3 +1,5 @@
+import Button from '../../ui/button';
+import Container from '../../ui/container';
 import styles from './styles.module.css';
 
 type AuthNavProps = {
@@ -7,7 +9,7 @@ type AuthNavProps = {
 export default function AuthNav({ user }: AuthNavProps) {
   return (
     <div className={styles['auth-nav']}>
-      <div className={`container ${styles['auth-nav__container']}`}>
+      <Container className={styles['auth-nav__container']}>
         <nav aria-label='Autenticación de usuario'>
           <ul className={styles['auth-nav__list']}>
             {user ? (
@@ -17,31 +19,31 @@ export default function AuthNav({ user }: AuthNavProps) {
                 </li>
                 <li className={styles['auth-nav__item']}>
                   <form action='/logout' method='POST'>
-                    <button
+                    <Button
                       className={`button button--ghost ${styles['auth-nav__button']}`}
                     >
                       Cerrar sesión
-                    </button>
+                    </Button>
                   </form>
                 </li>
               </>
             ) : (
               <>
                 <li className={styles['auth-nav__item']}>
-                  <a href='/login' className={styles['auth-nav__link']}>
+                  <Button href='/login' className={styles['auth-nav__link']}>
                     Iniciar sesión
-                  </a>
+                  </Button>
                 </li>
                 <li className={styles['auth-nav__item']}>
-                  <a href='/signup' className={styles['auth-nav__link']}>
+                  <Button href='/signup' className={styles['auth-nav__link']}>
                     Crear una cuenta
-                  </a>
+                  </Button>
                 </li>
               </>
             )}
           </ul>
         </nav>
-      </div>
+      </Container>
     </div>
   );
 }

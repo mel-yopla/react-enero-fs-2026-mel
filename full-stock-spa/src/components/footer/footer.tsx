@@ -1,5 +1,7 @@
 import { type SubmitEvent } from 'react';
 import styles from './styles.module.css';
+import Button from '../../ui/button';
+import Container from '../../ui/container';
 
 type FooterProps = {
   className?: string;
@@ -17,49 +19,49 @@ export default function Footer({ className }: FooterProps) {
 
   return (
     <footer className={className}>
-      <div className='container'>
+      <Container>
         <section className={`section ${styles['footer__section']}`}>
           <div className={styles['footer__links']}>
             <ul role='list' className={styles['footer__list']}>
               <li className={styles['footer__title']}>Tienda</li>
               <li>
-                <a href='/categories/polos'>Polos</a>
+                <Button href='/categories/polos'>Polos</Button>
               </li>
               <li>
-                <a href='/categories/tazas'>Tazas</a>
+                <Button href='/categories/tazas'>Tazas</Button>
               </li>
               <li>
-                <a href='/categories/stickers'>Stickers</a>
+                <Button href='/categories/stickers'>Stickers</Button>
               </li>
             </ul>
             <ul role='list' className={styles['footer__list']}>
               <li className={styles['footer__title']}>Compañía</li>
               <li>
-                <a href='/about'>Quienes somos</a>
+                <Button href='/about'>Quienes somos</Button>
               </li>
               <li>
-                <a href='/terms'>Términos y condiciones</a>
+                <Button href='/terms'>Términos y condiciones</Button>
               </li>
               <li>
-                <a href='/privacy'>Privacidad</a>
+                <Button href='/privacy'>Privacidad</Button>
               </li>
             </ul>
             <ul role='list' className={styles['footer__list']}>
               <li className={styles['footer__title']}>Conecta</li>
               <li>
-                <a href='https://wa.me/' target='_blank'>
+                <Button href='https://wa.me/' target='_blank'>
                   WhatsApp
-                </a>
+                </Button>
               </li>
               <li>
-                <a href='https://www.facebook.com/' target='_blank'>
+                <Button href='https://www.facebook.com/' target='_blank'>
                   Facebook
-                </a>
+                </Button>
               </li>
               <li>
-                <a href='https://www.instagram.com/' target='_blank'>
+                <Button href='https://www.instagram.com/' target='_blank'>
                   Instagram
-                </a>
+                </Button>
               </li>
             </ul>
           </div>
@@ -79,12 +81,12 @@ export default function Footer({ className }: FooterProps) {
                 placeholder='ejemplo@mail.com'
                 autoComplete='email'
               />
-              <button
+              <Button
                 className='button button--lg button--secondary'
                 type='submit'
               >
                 Suscribirse
-              </button>
+              </Button>
             </form>
           </div>
         </section>
@@ -92,7 +94,7 @@ export default function Footer({ className }: FooterProps) {
         <small className={styles['footer__copyright']}>
           Todos los derechos reservados © Full Stock
         </small>
-      </div>
+      </Container>
     </footer>
   );
 }
