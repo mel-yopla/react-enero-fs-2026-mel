@@ -4,10 +4,22 @@ interface Tarea {
   completed: boolean;
 }
 
+interface User {
+  username: string;
+  name: string;
+  position: string;
+}
+
 export const dataTareas: Tarea[] = [
   { id: 1, title: "Aprender React", completed: false },
   { id: 2, title: "Estudiar TypeScript", completed: true },
   { id: 3, title: "Crear una aplicación", completed: false },
   { id: 4, title: "Estudiar node ", completed: true },
   { id: 5, title: "Hacer ejercicio", completed: false },
+];
+
+export const dataUsers: User[] = [
+  { username: "mel-15", name: "Mel", position: "Developer" },
+  { username: "profe", name: "Juan", position: "Instructor" },
+  { username: "abc", name: "Jhon", position: "Director" },
 ];
