@@ -5,11 +5,6 @@ import App from "./jsx/App";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <App
-      nombre="Mel"
-      primerApellido="Yopla"
-    >
-      Hello World!
-    </App>
+    <App>Hello World!</App>
   </StrictMode>,
 );
