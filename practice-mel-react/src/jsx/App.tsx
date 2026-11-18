@@ -11,11 +11,12 @@ interface Tarea {
 
 // 2. Definimos la "forma" de las props
 interface AppProps {
-  nombre: string;
+  nombre?: string;
   primerApellido?: string;
   segundoApellido?: string;
-  children?: string | undefined;
+  children?: React.ReactNode;
 }
+// / Es mejor usar ReactNode para children
 
 const tareas: Tarea[] = [
   { id: 1, title: "Learn React", completed: true },
@@ -31,7 +32,7 @@ interface User {
   position: string;
 }
 
-const data: User[] = [
+const dataUsers: User[] = [
   { username: "mel-15", name: "Mel", position: "deverloper" },
   {
     username: "alex-22",
@@ -44,8 +45,8 @@ const data: User[] = [
 // 3. Le asignamos la interface al parámetro props
 // const App = (props: AppProps) => {
 const App = ({
-  nombre,
-  primerApellido,
+  nombre = "Mel",
+  primerApellido = "Yopla",
   segundoApellido,
   children,
 }: AppProps) => {
@@ -58,10 +59,12 @@ const App = ({
   return (
     <div>
       <h1>
-        Hola {nombre} {primerApellido}- {children}
+        Hola {nombre} {primerApellido}
       </h1>
+      <p>{children}</p>
       <p>{segundoApellido ?? "No Enviado el segundo apellido"}</p>
 
+      <h2>Mostrando props enviados por el componente padre</h2>
       <Card
         name="Alex"
         position="Developer"
@@ -85,7 +88,7 @@ const App = ({
         <button>Decrementar</button>
         <p>Contador: 0</p>
       </div>
-      <h2>Example Arreglos React</h2>
+      <h2>Example Arreglos explicitos en React</h2>
       <div className="array-react">
         {[
           <p key={1}>Parrafo 1</p>,
@@ -97,7 +100,7 @@ const App = ({
       {/* Renderizando un listado de componentes
        */}
       <ul className="card-list">
-        {data.map((user) => {
+        {dataUsers.map((user) => {
           return (
             <Card
               key={user.username}
