@@ -1,4 +1,5 @@
-import { dataTareas } from "./data";
+import Card from "./Card";
+import { dataTareas, dataUsers } from "./data";
 
 const App = () => {
   const frutas = ["manzana", "pera", "durazno", "plátano"];
@@ -19,6 +20,20 @@ const App = () => {
               <strong>{tarea.title}</strong>
               <span>{tarea.completed ? "✅" : "⏳"}</span>
             </li>
+          ))}
+        </ul>
+      </div>
+      <h2>Renderizando componentes en Listas</h2>
+      <div>
+        <ul className="card-list">
+          {dataUsers.map((user) => (
+            // pasamos cada objeto como props al componente Card
+            <Card
+              username={user.username}
+              name={user.name}
+              position={user.position}
+              key={user.username}
+            ></Card>
           ))}
         </ul>
       </div>
