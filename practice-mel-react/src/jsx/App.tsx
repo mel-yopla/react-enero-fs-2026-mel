@@ -1,6 +1,7 @@
 // import type { FC } from "react";
 // Revisar => Para pasar cosas de react como props
 import Card from "./Card";
+import Product, { dataProducts } from "./Product";
 
 // 1. Definimos el tipo para la tarea
 interface Tarea {
@@ -109,6 +110,17 @@ const App = ({
             ></Card>
           );
         })}
+      </ul>
+      <h2> Ejercicio Practico - Productos</h2>
+      <ul>
+        {dataProducts.map((product) => (
+          <Product
+            key={product.title}
+            title={product.title}
+            price={product.price}
+            isAvailable={product.isAvailable}
+          ></Product>
+        ))}
       </ul>
     </div>
   );
